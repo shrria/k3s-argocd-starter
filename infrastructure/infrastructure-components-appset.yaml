@@ -6,16 +6,16 @@ metadata:
     argocd.argoproj.io/sync-wave: "-2"
 spec:
   generators:
-  - git:
-      repoURL: https://github.com/mitchross/k3s-argocd-starter
-      revision: HEAD
-      directories:
-      - path: infrastructure/networking/*
-      - path: infrastructure/storage/*
-      - path: infrastructure/controllers/*
+    - git:
+        repoURL: https://github.com/shrria/k3s-argocd-starter
+        revision: HEAD
+        directories:
+          - path: infrastructure/networking/*
+          - path: infrastructure/storage/*
+          - path: infrastructure/controllers/*
   template:
     metadata:
-      name: '{{path.basename}}'
+      name: "{{path.basename}}"
       labels:
         type: infrastructure
     spec:
@@ -23,12 +23,12 @@ spec:
       source:
         plugin:
           name: kustomize-build-with-helm
-        repoURL: https://github.com/mitchross/k3s-argocd-starter
+        repoURL: https://github.com/shrria/k3s-argocd-starter
         targetRevision: HEAD
-        path: '{{path}}'
+        path: "{{path}}"
       destination:
         server: https://kubernetes.default.svc
-        namespace: '{{path.basename}}'
+        namespace: "{{path.basename}}"
       syncPolicy:
         automated:
           prune: true
@@ -40,9 +40,9 @@ spec:
             factor: 2
             maxDuration: 3m
         syncOptions:
-        - CreateNamespace=true
-        - ServerSideApply=true
-        - RespectIgnoreDifferences=true
-        - ApplyOutOfSyncOnly=true
-        - Replace=false
-        - IgnoreMissingTemplate=true
+          - CreateNamespace=true
+          - ServerSideApply=true
+          - RespectIgnoreDifferences=true
+          - ApplyOutOfSyncOnly=true
+          - Replace=false
+          - IgnoreMissingTemplate=true
