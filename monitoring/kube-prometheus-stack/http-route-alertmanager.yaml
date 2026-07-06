@@ -5,16 +5,16 @@ metadata:
   namespace: kube-prometheus-stack
 spec:
   parentRefs:
-  - name: gateway-internal
-    namespace: gateway
-    sectionName: https
+    - name: gateway-internal
+      namespace: gateway
+      sectionName: https
   hostnames:
-  - "alertmanager.vanillax.xyz"
+    - "alertmanager.shrria.com"
   rules:
-  - matches:
-    - path:
-        type: PathPrefix
-        value: /
-    backendRefs:
-    - name: prometheus-kube-prometheus-stack-alertmanager
-      port: 9093
+    - matches:
+        - path:
+            type: PathPrefix
+            value: /
+      backendRefs:
+        - name: prometheus-kube-prometheus-stack-alertmanager
+          port: 9093

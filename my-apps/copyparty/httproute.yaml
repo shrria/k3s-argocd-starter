@@ -5,16 +5,16 @@ metadata:
   namespace: copyparty
 spec:
   parentRefs:
-  - name: gateway-internal
-    namespace: gateway
-    sectionName: https
+    - name: gateway-internal
+      namespace: gateway
+      sectionName: https
   hostnames:
-  - "copyparty.vanillax.xyz"
+    - "copyparty.shrria.com"
   rules:
-  - matches:
-    - path:
-        type: PathPrefix
-        value: /
-    backendRefs:
-    - name: copyparty
-      port: 3923
+    - matches:
+        - path:
+            type: PathPrefix
+            value: /
+      backendRefs:
+        - name: copyparty
+          port: 3923

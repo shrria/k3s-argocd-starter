@@ -5,16 +5,16 @@ metadata:
   namespace: hello-world
 spec:
   parentRefs:
-    - name: gateway-internal    # Must match your Gateway's metadata.name
+    - name: gateway-internal # Must match your Gateway's metadata.name
       namespace: gateway
-      sectionName: https       # Must match your Gateway's listeners[].name
+      sectionName: https # Must match your Gateway's listeners[].name
   hostnames:
-  - "hello-world.vanillax.xyz"
+    - "hello-world.shrria.com"
   rules:
-  - matches:
-    - path:
-        type: PathPrefix 
-        value: /
-    backendRefs:
-    - name: hello-world
-      port: 8080
+    - matches:
+        - path:
+            type: PathPrefix
+            value: /
+      backendRefs:
+        - name: hello-world
+          port: 8080

@@ -5,16 +5,16 @@ metadata:
   namespace: kube-prometheus-stack
 spec:
   parentRefs:
-  - name: gateway-internal # Must match your Gateway's metadata.name
-    namespace: gateway
-    sectionName: https # Must match your Gateway's listeners[].name
+    - name: gateway-internal # Must match your Gateway's metadata.name
+      namespace: gateway
+      sectionName: https # Must match your Gateway's listeners[].name
   hostnames:
-  - "prometheus.vanillax.xyz"
+    - "prometheus.shrria.com"
   rules:
-  - matches:
-    - path:
-        type: PathPrefix
-        value: /
-    backendRefs:
-    - name: prometheus-operated
-      port: 9090
+    - matches:
+        - path:
+            type: PathPrefix
+            value: /
+      backendRefs:
+        - name: prometheus-operated
+          port: 9090

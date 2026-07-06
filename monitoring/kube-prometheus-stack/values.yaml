@@ -113,22 +113,22 @@ grafana:
     dashboardproviders.yaml:
       apiVersion: 1
       providers:
-      - name: 'grafana-dashboards-kubernetes'
-        orgId: 1
-        folder: 'Kubernetes'
-        type: file
-        disableDeletion: true
-        editable: false
-        options:
-          path: /var/lib/grafana/dashboards/kubernetes
-      - name: 'grafana-dashboards-infrastructure'
-        orgId: 1
-        folder: 'Infrastructure'
-        type: file
-        disableDeletion: true
-        editable: false
-        options:
-          path: /var/lib/grafana/dashboards/infrastructure
+        - name: "grafana-dashboards-kubernetes"
+          orgId: 1
+          folder: "Kubernetes"
+          type: file
+          disableDeletion: true
+          editable: false
+          options:
+            path: /var/lib/grafana/dashboards/kubernetes
+        - name: "grafana-dashboards-infrastructure"
+          orgId: 1
+          folder: "Infrastructure"
+          type: file
+          disableDeletion: true
+          editable: false
+          options:
+            path: /var/lib/grafana/dashboards/infrastructure
   dashboards:
     kubernetes:
       k8s-views-global:
@@ -179,7 +179,7 @@ grafana:
   # Grafana configuration
   grafana.ini:
     server:
-      root_url: https://grafana.vanillax.xyz
+      root_url: https://grafana.shrria.com
     security:
       allow_embedding: true
       cookie_secure: true

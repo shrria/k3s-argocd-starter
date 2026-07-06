@@ -12,7 +12,7 @@ spec:
       namespace: gateway
       sectionName: https
   hostnames:
-    - "libreddit.vanillax.xyz"
+    - "libreddit.shrria.com"
   rules:
     - matches:
         - path:
